@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>切换CentOS的yum镜像源为阿里云镜像</title>
+      <link href="/2024/10/16/linux/change-yum-mirrors/"/>
+      <url>/2024/10/16/linux/change-yum-mirrors/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-备份文件"><a href="#1-备份文件" class="headerlink" title="1. 备份文件"></a>1. 备份文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> -a /etc/yum.repos.d /etc/yum.repos.d.backup</span><br></pre></td></tr></table></figure><h2 id="2-移除所有配置文件"><a href="#2-移除所有配置文件" class="headerlink" title="2. 移除所有配置文件"></a>2. 移除所有配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /etc/yum.repos.d/repo_backup</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> /etc/yum.repos.d/*.repo /etc/yum.repos.d/repo_backup</span><br></pre></td></tr></table></figure><h2 id="3-下载阿里云配置文件"><a href="#3-下载阿里云配置文件" class="headerlink" title="3. 下载阿里云配置文件"></a>3. 下载阿里云配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure><h2 id="4-清除yum缓存"><a href="#4-清除yum缓存" class="headerlink" title="4. 清除yum缓存"></a>4. 清除yum缓存</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> yum clean all</span><br></pre></td></tr></table></figure><h2 id="5-生成新的缓存"><a href="#5-生成新的缓存" class="headerlink" title="5. 生成新的缓存"></a>5. 生成新的缓存</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> yum makecache</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> CentOS </tag>
+            
+            <tag> yum </tag>
+            
+            <tag> 镜像源 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CentOS 7 升级 openssh 和 openssl</title>
       <link href="/2024/10/12/linux/update-openssh/"/>
       <url>/2024/10/12/linux/update-openssh/</url>
